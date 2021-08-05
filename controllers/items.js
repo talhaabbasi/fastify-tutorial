@@ -1,5 +1,4 @@
 let items = require("../Items")
-const { v4: uuidv4 } = require("uuid")
 
 const getItems = (req, reply) => {
   reply.send(items)
@@ -12,9 +11,9 @@ const getItem = (req, reply) => {
 }
 
 const addItem = (req, reply) => {
-  const { name } = req.body
+  const { id, name } = req.body
   const item = {
-    id: uuidv4(),
+    id,
     name,
   }
   console.log(item)
